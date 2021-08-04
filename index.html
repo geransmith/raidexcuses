@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var allExcuses = [
+            "jopaa ready check",
+            "cats on fire",
+            "door stuck"
+        ]
+        $(document).ready(function () {
+            $(document).on("click", "#btnGenerateExcuse", function () {
+                updateExcuse();
+            });
+            updateExcuse();
+        });
+
+        function updateExcuse() {
+            var randomExcuse = allExcuses[Math.floor(Math.random() * allExcuses.length)];
+            var $txtTheExcuse = $("#txtTheExcuse");
+            $txtTheExcuse.html(randomExcuse);
+        }
+    </script>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <h1>Raid Excuses dot COM</h1>
+        <br />
+
+        <input class="btn btn-success" type="button" id="btnGenerateExcuse" value="Generate Excuse" />
+        <br />
+        <br />
+        <p>The Excuse: <span id="txtTheExcuse">...</span></p>
+
+    </div>
+    <div class="col-lg-2"></div>
+</body>
+
+</html>
