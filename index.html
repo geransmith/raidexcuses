@@ -1,35 +1,65 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1>
-    <title>Raid Excuses</title>
     <style>
         body {
             background-color: lightblue;
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
         }
         #excuse {
             margin-top: 20px;
             font-size: 18px;
             color: #333;
         }
+        footer {
+            padding: 10px 0;
+            background-color: lightblue;
+            color: #666;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Raid Excuses dot COM</h1>
-    Need an excuse to skip trash, skip a farm boss, or otherwise not raid?
-    <br />
-    <button onclick="getExcuse()">Generate an Excuse</button>
-    The Excuse: <div id="excuse"></div>
+    <main>
+        <h1>Raid Excuses dot COM</h1>
+        Need an excuse to skip trash, skip a farm boss, or otherwise not raid?
+        <br />
+        <button onclick="getExcuse()">Generate an Excuse</button>
+        <div id="excuse"></div>
+    </main>
+
+    <footer>
+        <p>If you're interested in adding more excuses, feel free to make a pull request <a href="https://github.com/geransmith/raidexcuses">here</a></p>
+        <p>To help support this site, and earn some DigitalOcean credits: <a href="https://m.do.co/c/3a45a3f20cb5">Sign Up Here</a></p>
+    </footer>
 
     <script>
         async function getExcuse() {
@@ -43,7 +73,9 @@
                 
                 // Pick a random excuse
                 const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
-                document.getElementById('excuse').textContent = randomExcuse;
+                
+                // Display the excuse with bold "The Excuse:"
+                document.getElementById('excuse').innerHTML = `<strong>The Excuse:</strong> ${randomExcuse}`;
             } catch (error) {
                 document.getElementById('excuse').textContent = 'Error: Unable to fetch excuses.';
                 console.error(error);
@@ -51,9 +83,4 @@
         }
     </script>
 </body>
-<footer>
-    <p>If you're interested in adding more excuses, feel free to make a pull request <a href="https://github.com/geransmith/raidexcuses">here</a></p>
-    <br />
-    <p>To help support this site, and earn some DigitalOcean credits: <a href="https://m.do.co/c/3a45a3f20cb5">Sign Up Here</a></p>
-</footer>
 </html>
