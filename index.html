@@ -1,132 +1,86 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
-    <link rel="apple-touch-icon" type="image/png" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-    <script>
-        var allExcuses = [
-            "Sorry all, my cat is on fire",
-            "My fish is drowning",
-            "I need to help move a fridge",
-            "I've been busy with work",
-            "My computer just exploded",
-            "&ltScream loudly and disconnect from Discord&gt",
-            "I tried to fart, and pooped my pants",
-            "My mom bought a Chinese COVID-19 scam and I need to help her",
-            "Jehovah's Witnesses are at my door",
-            "My cat fell in the dishwasher",
-            "No internet",
-            "My dog is in the dryer and I just started it",
-            "My dryer is off balance and needs to be moved",
-            "Sorry my dudes, Bowflexing tonight",
-            "I forgot about raid",
-            "Shoot, tonight was raid night?",
-            "Gotta burn this bowl my dude",
-            "I am in the hospital since I have too much blood",
-            "BRB, my mom died",
-            "&ltSpeaking in the wrong voice&gt Sorry, &ltraid member&gt beat the crap out of a guy and is in prison",
-            "Sorry, my mouse is dead",
-            "My dog unplugged the surge protector",
-            "Shoot, my cat hit the power button on my PC",
-            "My dog's DNA test just came in and my family is going to open it",
-            "I am playing with my dog",
-            "My dog just learned he is adopted",
-            "My dog's DNA test just came back, and we learned I'm not his father",
-            "I just learned my brother's girlfriend is a sheep",
-            "I lost my mom in a laundromat. She was smoking and playing mahjong",
-            "Sorry, I died in a car crash",
-            "I need to watch my sibling",
-            "Cooking dinner",
-            "I forgot to get the raw meat out of my car",
-            "BRB, Taco Bell time",
-            "Cat shit on the ceiling fan again",
-            "Sorry, I need to take my grandma to karate",
-            "Back yard is on fire",
-            "&ltScreaming loudly&gt THERE IS A COCKROACH IN MY FACE",
-            "&ltMake a loud crashing noise and disconnect from voice chat&gt",
-            "BRB, my grandma fell down the stairs and got pregnant",
-            "BRB",
-            "I need to fly to another country for work",
-            "My electricity went out",
-            "AFK, I need to bursh my teeth",
-            "My parents/spouse/significant other hid the modem",
-            "Gotta go, my pizza man got mugged",
-            "I got called into work to monitor the bits as the move across the tubes",
-            "A heat lamp fell on my iguana",
-            "My rat chewed threw my mouse cable",
-            "I've got to log off, I can't cast any spells",
-            "I forgot to add my spells to my bar",
-            "My dog unplugged all the cables from the back of my computer",
-            "I wrote a song about my guild and almost missed raid",
-            "I need to buy a vacation package",
-            "I have food poisoning",
-            "I've got to go test drive the new Ford&#8482; Bronco&#8482;",
-            "My fanatasy football draft starts in five minutes and I can't get a Kicker as my first round pick again",
-            "I'm on my way home from dinner, but my calf keeps cramping so I can't drive for long",
-            "Sorry, no bones day today",
-            "My dog just threw up all over the floor",
-            "Jake broke my ankle yesterday",
-            "AFK, peeling an orange",
-            "I need to eat waffles for 24 hours at Waffle House",
-            "I'm going to be drunk at 9AM at Disney World",
-            "My dog pooped all over my bed and my husband won't clean it up",
-            "My wife is doing taxes in the background and I can't hear anything",
-            "I got a new puppy and he had diarrhea all over the floor",
-            "I keep having to clean up after a dog",
-            "I am buying a house",
-            "I need to get my cat inside"
-        ]
-        $(document).ready(function () {
-            $(document).on("click", "#btnGenerateExcuse", function () {
-                updateExcuse();
-            });
-            updateExcuse();
-        });
-
-        function updateExcuse() {
-            var randomExcuse = allExcuses[Math.floor(Math.random() * allExcuses.length)];
-            var $txtTheExcuse = $("#txtTheExcuse");
-            $txtTheExcuse.html(randomExcuse);
-        }
-    </script>
     <style>
         body {
             background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #excuse {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        footer {
+            padding: 10px 0;
+            background-color: lightblue;
+            color: #666;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
+    <main>
         <h1>Raid Excuses dot COM</h1>
-        <br />
         Need an excuse to skip trash, skip a farm boss, or otherwise not raid?
         <br />
-        <input class="btn btn-success" type="button" id="btnGenerateExcuse" value="Generate Excuse" />
-        <br />
-        <br />
-        <p>The Excuse: <span id="txtTheExcuse">...</span></p>
+        <button onclick="getExcuse()">Generate an Excuse</button>
+        <div id="excuse"></div>
+    </main>
 
-    </div>
-    <div class="col-lg-2"></div>
-    <br />
+    <footer>
+        <p>If you're interested in adding more excuses, feel free to make a pull request <a href="https://github.com/geransmith/raidexcuses">here</a></p>
+        <p>To help support this site, and earn some DigitalOcean credits: <a href="https://m.do.co/c/3a45a3f20cb5">Sign Up Here</a></p>
+    </footer>
+
+    <script>
+        async function getExcuse() {
+            try {
+                // Fetch the excuses from the text file
+                const response = await fetch('excuses.txt');
+                if (!response.ok) throw new Error('Failed to fetch excuses.');
+                
+                const text = await response.text();
+                const excuses = text.split('\n').filter(line => line.trim() !== '');
+                
+                // Pick a random excuse
+                const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
+                
+                // Display the excuse with bold "The Excuse:"
+                document.getElementById('excuse').innerHTML = `<strong>The Excuse:</strong> ${randomExcuse}`;
+            } catch (error) {
+                document.getElementById('excuse').textContent = 'Error: Unable to fetch excuses.';
+                console.error(error);
+            }
+        }
+    </script>
 </body>
-<footer>
-    <p>If you're interested in adding more excuses, feel free to make a pull request <a href="https://github.com/geransmith/raidexcuses">here</a></p>
-    <br />
-    <p>To help support this site, and earn some DigitalOcean credits: <a href="https://m.do.co/c/3a45a3f20cb5">Sign Up Here</a></p>
-</footer>
 </html>
